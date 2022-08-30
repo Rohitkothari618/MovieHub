@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    --font-roboto: "Roboto Slab", serif;
+    --font-raleway: "Raleway", sans-serif;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    background-color: rgba(0, 0, 0, 0.866);
+    padding: 44px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+    background: linear-gradient(90deg, rgb(84, 84, 207), rgb(160, 51, 172));
+    background-clip: text;
+    color: transparent;
+    font-size: 2.5rem;
+    text-align: center;
+
 }
 
-.App-link {
-  color: #61dafb;
+.search {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.814);
+    width: fit-content;
+    width: 70vw;
+    margin: 24px auto;
+    position: relative;
+    border-radius: 4rem;
+    overflow: hidden;
+    justify-content: center;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search img {
+
+    position: absolute;
+    right: 0;
+    margin-right: 45px;
+    cursor: pointer;
+
+
+}
+
+.search input {
+    padding: 12px 1.2rem;
+    border-style: none;
+    width: 70vw;
+    margin: auto;
+    border: none;
+    background-color: transparent;
+    font-size: 1.1rem;
+    outline: none;
+    color: white;
+
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.movie {
+    position: relative;
+    box-sizing: border-box;
+    margin: 24px;
+    color: white;
+    font-size: 1.1rem;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+    box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+
+}
+
+.movie .year {
+    padding: 2px 4px;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+}
+
+.movie img {
+    border-radius: 4px;
+    width: 200px;
+    height: 300px;
+    z-index: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.movie .title {
+    position: absolute;
+    bottom: 0px;
+    background-color: rgba(240, 230, 140, 0.767);
+    color: black;
+    width: 100%;
+    z-index: 2;
+    text-align: left;
+    font-size: larger;
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    padding: 4px;
+
+}
+
+.movie:hover div:nth-of-type(2) {
+    height: 100%;
+    opacity: 0.3;
+}
+
+.movie:hover div:nth-of-type(3) {
+    background-color: transparent;
+    color: white;
+}
+
+.movie:hover div:nth-of-type(1) {
+    opacity: 1;
+}
+
+.movie:hover {
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05, 1.05);
+}
+
+.empty {
+    color: white;
+    height: 400px;
+    width: 300px;
 }
